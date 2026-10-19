@@ -1,9 +1,8 @@
-import React from "react";
 import SignatureChip from "./SignatureChip";
 
 const HeroSection = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col min-h-[calc(100dvh-var(--spacing-navbar))]">
       <SignatureChip />
     </div>
   );

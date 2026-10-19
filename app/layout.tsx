@@ -18,10 +18,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       )}
       suppressHydrationWarning
     >
-      <body className="flex flex-col px-20 ">
+      <body className="flex flex-col min-h-dvh px-20">
         <Providers>
           <NavBar />
-          <main>{children}</main>
+          <main className="flex flex-col flex-1 ">{children}</main>
         </Providers>
       </body>
     </html>

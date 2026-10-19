@@ -1,8 +1,6 @@
 import Link from "next/link";
-import { Card, CardContent } from "../../ui/card";
 import NavLink from "./NavLink";
-import { NavItem } from "./types.";
-import { Button } from "../../ui/button";
+import { NavItem } from "./types";
 
 const NavItems: NavItem[] = [
   {
@@ -24,7 +22,7 @@ const NavItems: NavItem[] = [
 
 const NavBar = () => {
   return (
-    <nav className="w-full h-18 flex justify-center items-end   ">
+    <nav className="sticky top-0 w-full h-navbar flex justify-center items-end">
       <div className=" flex bg-card border items-center rounded-full pl-5 py-1 pr-1 gap-2 ">
         <Link
           href={"/"}

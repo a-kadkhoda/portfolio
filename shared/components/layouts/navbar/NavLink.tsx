@@ -20,7 +20,7 @@ const NavLink: FC<NavLinkProps> = ({ href, title }) => {
         "text-muted-foreground hover:text-foreground text-nav ",
         "px-3 py-2",
         "rounded-full",
-        isActive && "bg-primary-subtle text-foreground",
+        isActive && "bg-primary-subtle text-foreground text-nav",
       )}
       href={href}
     >

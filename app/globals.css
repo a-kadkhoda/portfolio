@@ -67,6 +67,10 @@
   --text-nav-lg--font-weight: 600;
 }
 
+@theme {
+  --spacing-navbar: 4.5rem;
+}
+
 :root {
   --white: #ffffff;
   --ink-950: #080a12;
