@@ -115,7 +115,7 @@ const SignatureChip = () => {
     <Card className="w-max">
       <CardContent>
         {code.map((code, index) => (
-          <span className={cn(cssCode(code.kind))} key={index}>
+          <span className={cn(cssCode(code.kind), "font-mono")} key={index}>
             {code.plainText}
           </span>
         ))}

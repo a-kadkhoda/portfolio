@@ -3,6 +3,7 @@ import "./globals.css";
 import { cn } from "@/shared/lib/utils";
 import { Providers } from "@/shared/components/providers";
 import { jetBrainsMono, manrope, unbounded, vazirmatn } from "@/shared/fonts";
+import NavBar from "@/shared/components/layouts/navbar";
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -17,8 +18,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       )}
       suppressHydrationWarning
     >
-      <body>
-        <Providers>{children}</Providers>
+      <body className="flex flex-col px-20 ">
+        <Providers>
+          <NavBar />
+          <main>{children}</main>
+        </Providers>
       </body>
     </html>
   );
