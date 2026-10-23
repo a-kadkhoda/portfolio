@@ -1,24 +1,6 @@
 import Link from "next/link";
 import NavLink from "./NavLink";
-import { NavItem } from "./types";
-
-const NavItems: NavItem[] = [
-  {
-    id: 1,
-    title: "Projects",
-    href: "/projects",
-  },
-  {
-    id: 2,
-    title: "Blog",
-    href: "/blog",
-  },
-  {
-    id: 3,
-    title: "About",
-    href: "/about",
-  },
-];
+import { navItems } from "@/data/navbar";
 
 const NavBar = () => {
   return (
@@ -34,7 +16,7 @@ const NavBar = () => {
         <div className="h-5 w-px bg-border" />
         <div className="flex gap-2">
           <div className="flex items-center">
-            {NavItems.map((navItem) => (
+            {navItems.map((navItem) => (
               <NavLink
                 key={navItem.id}
                 href={navItem.href}
