@@ -1,121 +1,23 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { code } from "@/data/hero";
+import { CodeType } from "@/types/hero";
 import { cn } from "cn";
 
-type CodeType = "punct" | "tag" | "attr" | "string" | "space";
-
-interface Code {
-  plainText: string;
-  kind: CodeType;
-}
-
-const code: Code[] = [
-  {
-    plainText: "<",
-    kind: "punct",
-  },
-
-  {
-    plainText: "Developer",
-    kind: "tag",
-  },
-  {
-    plainText: " ",
-    kind: "space",
-  },
-  {
-    plainText: "name",
-    kind: "attr",
-  },
-  {
-    plainText: "=",
-    kind: "punct",
-  },
-  {
-    plainText: '"Aliakbar Kadkhoda"',
-    kind: "string",
-  },
-  {
-    plainText: " ",
-    kind: "space",
-  },
-  {
-    plainText: "stack",
-    kind: "attr",
-  },
-  { plainText: "=", kind: "punct" },
-  { plainText: "{", kind: "punct" },
-  {
-    plainText: "[",
-    kind: "punct",
-  },
-  {
-    plainText: '"React"',
-    kind: "string",
-  },
-  {
-    plainText: ",",
-    kind: "punct",
-  },
-  {
-    plainText: " ",
-    kind: "space",
-  },
-  {
-    plainText: '"TypeScript"',
-    kind: "string",
-  },
-  {
-    plainText: ",",
-    kind: "punct",
-  },
-  {
-    plainText: " ",
-    kind: "space",
-  },
-  {
-    plainText: '"Node"',
-    kind: "string",
-  },
-  { plainText: "]", kind: "punct" },
-  {
-    plainText: "}",
-    kind: "punct",
-  },
-  {
-    plainText: " ",
-    kind: "space",
-  },
-  {
-    plainText: "/>",
-    kind: "punct",
-  },
-];
+export const codeTokenClass: Record<CodeType, string> = {
+  tag: "text-highlight",
+  attr: "text-info",
+  punct: "text-info",
+  space: "",
+  string: "text-code-string",
+};
 
 const SignatureChip = () => {
-  const cssCode = (kind: CodeType) => {
-    switch (kind) {
-      case "tag":
-        return "text-highlight";
-      case "attr":
-        return "text-info";
-      case "punct":
-        return "text-info";
-      case "space":
-        return "";
-      case "string":
-        return "text-code-string";
-
-      default:
-        return "";
-    }
-  };
-
   return (
     <Card className="w-max">
       <CardContent>
-        {code.map((code, index) => (
-          <span className={cn(cssCode(code.kind), "font-mono")} key={index}>
-            {code.plainText}
+        {code.map(({ kind, plainText }, index) => (
+          <span className={cn(codeTokenClass[kind], "font-mono")} key={index}>
+            {plainText}
           </span>
         ))}
       </CardContent>
