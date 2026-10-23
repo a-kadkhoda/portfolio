@@ -1,6 +1,6 @@
 import SignatureChip from "./SignatureChip";
 
-const HeroSection = () => {
+const Hero = () => {
   return (
     <div className="flex flex-col ">
       <SignatureChip />
@@ -8,4 +8,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default Hero;

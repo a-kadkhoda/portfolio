@@ -1,9 +1,8 @@
-import "./globals.css";
-
 import { cn } from "@/lib/utils";
-import { Providers } from "@/app/Providers";
-import { jetBrainsMono, manrope, unbounded, vazirmatn } from "@/assets/fonts";
-import NavBar from "@/components/layouts/navbar/NavBar";
+import { Providers } from "@/components/Providers";
+import { jetBrainsMono, manrope, unbounded, vazirmatn } from "@/lib/fonts";
+import NavBar from "@/components/layout/Navbar";
+import "./globals.css";
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
